@@ -45,7 +45,7 @@ BrowserSettingsWidget::BrowserSettingsWidget(QWidget* parent)
         tr("KeePassXC-Browser is needed for the browser integration to work. <br />Download it for %1 and %2 and %3. %4")
             .arg("<a href=\"https://addons.mozilla.org/firefox/addon/keepassxc-browser/\">Firefox</a>",
                  "<a href=\"https://chrome.google.com/webstore/detail/keepassxc-browser/oboonakemofpalcgghocfoadofidjkkk\">"
-                 "Google Chrome / Chromium / Vivaldi / Brave</a>",
+                 "Google Chrome / Chromium / Vivaldi / Brave / Dissenter</a>",
                  "<a href=\"https://microsoftedge.microsoft.com/addons/detail/pdffhmdngciaglkoonimfcmckehcpafo\">Microsoft Edge</a>",
                  snapInstructions));
     // clang-format on
@@ -84,9 +84,11 @@ BrowserSettingsWidget::BrowserSettingsWidget(QWidget* parent)
 #ifdef Q_OS_WIN
     // Brave uses Chrome's registry settings
     m_ui->braveSupport->setHidden(true);
+    // Dissenter uses Chrome's registry settings
+    m_ui->dissenterSupport->setHidden(true);
     // Vivaldi uses Chrome's registry settings
     m_ui->vivaldiSupport->setHidden(true);
-    m_ui->chromeSupport->setText("Chrome, Vivaldi, and Brave");
+    m_ui->chromeSupport->setText("Chrome, Vivaldi, Brave, and Dissenter");
     // Tor Browser uses Firefox's registry settings
     m_ui->torBrowserSupport->setHidden(true);
     m_ui->firefoxSupport->setText("Firefox and Tor Browser");
@@ -139,6 +141,7 @@ void BrowserSettingsWidget::loadSettings()
     m_ui->edgeSupport->setChecked(settings->browserSupport(BrowserShared::EDGE));
 #ifndef Q_OS_WIN
     m_ui->braveSupport->setChecked(settings->browserSupport(BrowserShared::BRAVE));
+    m_ui->dissenterSupport->setChecked(settings->browserSupport(BrowserShared::DISSENTER));
     m_ui->vivaldiSupport->setChecked(settings->browserSupport(BrowserShared::VIVALDI));
     m_ui->torBrowserSupport->setChecked(settings->browserSupport(BrowserShared::TOR_BROWSER));
 #endif
@@ -236,6 +239,7 @@ void BrowserSettingsWidget::saveSettings()
     settings->setBrowserSupport(BrowserShared::EDGE, m_ui->edgeSupport->isChecked());
 #ifndef Q_OS_WIN
     settings->setBrowserSupport(BrowserShared::BRAVE, m_ui->braveSupport->isChecked());
+    settings->setBrowserSupport(BrowserShared::DISSENTER, m_ui->dissenterSupport->isChecked());
     settings->setBrowserSupport(BrowserShared::VIVALDI, m_ui->vivaldiSupport->isChecked());
     settings->setBrowserSupport(BrowserShared::TOR_BROWSER, m_ui->torBrowserSupport->isChecked());
 

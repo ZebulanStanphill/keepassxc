@@ -49,6 +49,8 @@ namespace
         QStringLiteral("/Library/Application Support/TorBrowser-Data/Browser/Mozilla/NativeMessagingHosts");
     const QString TARGET_DIR_BRAVE =
         QStringLiteral("/Library/Application Support/BraveSoftware/Brave-Browser/NativeMessagingHosts");
+    const QString TARGET_DIR_DISSENTER =
+        QStringLiteral("/Library/Application Support/GabAI/Dissenter-Browser/NativeMessagingHosts");
     const QString TARGET_DIR_EDGE = QStringLiteral("/Library/Application Support/Microsoft Edge/NativeMessagingHosts");
 #elif defined(Q_OS_WIN)
     const QString TARGET_DIR_CHROME = QStringLiteral(
@@ -60,6 +62,7 @@ namespace
     const QString TARGET_DIR_VIVALDI = TARGET_DIR_CHROME;
     const QString TARGET_DIR_TOR_BROWSER = TARGET_DIR_FIREFOX;
     const QString TARGET_DIR_BRAVE = TARGET_DIR_CHROME;
+    const QString TARGET_DIR_DISSENTER = TARGET_DIR_CHROME;
     const QString TARGET_DIR_EDGE = QStringLiteral(
         "HKEY_CURRENT_USER\\Software\\Microsoft\\Edge\\NativeMessagingHosts\\org.keepassxc.keepassxc_browser");
 #else
@@ -70,6 +73,7 @@ namespace
     const QString TARGET_DIR_TOR_BROWSER = QStringLiteral(
         "/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/TorBrowser/Data/Browser/.mozilla/native-messaging-hosts");
     const QString TARGET_DIR_BRAVE = QStringLiteral("/BraveSoftware/Brave-Browser/NativeMessagingHosts");
+    const QString TARGET_DIR_DISSENTER = QStringLiteral("/GabAI/Dissenter-Browser/NativeMessagingHosts");
     const QString TARGET_DIR_EDGE = QStringLiteral("/microsoftedge/NativeMessagingHosts");
 #endif
 } // namespace
@@ -157,6 +161,8 @@ QString NativeMessageInstaller::getTargetPath(SupportedBrowsers browser) const
         return TARGET_DIR_TOR_BROWSER;
     case SupportedBrowsers::BRAVE:
         return TARGET_DIR_BRAVE;
+    case SupportedBrowsers::DISSENTER:
+        return TARGET_DIR_DISSENTER;
     case SupportedBrowsers::EDGE:
         return TARGET_DIR_EDGE;
     case SupportedBrowsers::CUSTOM:
@@ -188,6 +194,8 @@ QString NativeMessageInstaller::getBrowserName(SupportedBrowsers browser) const
         return QStringLiteral("tor-browser");
     case SupportedBrowsers::BRAVE:
         return QStringLiteral("brave");
+    case SupportedBrowsers::DISSENTER:
+        return QStringLiteral("dissenter");
     case SupportedBrowsers::EDGE:
         return QStringLiteral("edge");
     case SupportedBrowsers::CUSTOM:

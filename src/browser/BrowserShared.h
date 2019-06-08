@@ -32,6 +32,7 @@ namespace BrowserShared
         VIVALDI,
         TOR_BROWSER,
         BRAVE,
+        DISSENTER,
         EDGE,
         CUSTOM,
         MAX_SUPPORTED

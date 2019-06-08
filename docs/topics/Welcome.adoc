@@ -28,7 +28,7 @@ KeePassXC has numerous features for novice and power users alike. This guide wil
  ** Search for entries
  ** Password generator
  ** Auto-Type passwords into applications
- ** Browser integration with Google Chrome, Mozilla Firefox, Microsoft Edge, Chromium, Vivaldi, Brave, and Tor-Browser
+ ** Browser integration with Google Chrome, Mozilla Firefox, Microsoft Edge, Chromium, Vivaldi, Brave, Dissenter, and Tor-Browser
  ** Entry icon download
  ** Import databases from CSV, 1Password, and KeePass1 formats
 

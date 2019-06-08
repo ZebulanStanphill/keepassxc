@@ -751,6 +751,10 @@ chrome-laptop.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Dissenter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Google Chrome</source>
         <translation type="unfinished"></translation>
     </message>
